@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08150f" />
+    <meta
+      name="description"
+      content="Play a quick football match against the computer."
+    />
+    <title>Lions Football</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <div>
+            <p class="eyebrow">LIV FOOTBALL</p>
+            <h1>Quick Match</h1>
+          </div>
+        </div>
+        <p class="help">Move: WASD / arrows <span>·</span> Pass: E <span>·</span> Shoot: Space <span>·</span> Switch: Q <span>·</span> Tackle: F <span>·</span> Sprint: Shift</p>
+      </header>
+
+      <section class="match-card" aria-label="Football match">
+        <div class="hud">
+          <div class="team home">
+            <span class="team-dot home-dot" aria-hidden="true"></span>
+            <span class="team-name">Lions FC</span>
+            <strong id="score-home">0</strong>
+          </div>
+          <div class="match-clock">
+            <span id="match-status" role="status">READY</span>
+            <strong id="match-time">00:00</strong>
+          </div>
+          <div class="team away">
+            <strong id="score-away">0</strong>
+            <span class="team-name">Rivals</span>
+            <span class="team-dot away-dot" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="pitch-wrap">
+          <canvas id="gameCanvas" width="960" height="540" aria-label="Football match. Control the highlighted player with WASD or the arrow keys. Pass with E, shoot with Space, switch players with Q, and tackle with Shift."></canvas>
+          <div id="overlay" class="overlay">
+            <span class="overlay-ball" aria-hidden="true">⚽</span>
+            <h2 id="overlay-title">Ready for kickoff?</h2>
+            <p id="overlay-copy">Take on the computer and score more goals before full time.</p>
+            <button id="start-button" class="primary-button" type="button">Kick off</button>
+          </div>
+        </div>
+        <div class="match-footer">
+          <p id="game-message" aria-live="polite">Move into the ball to take control.</p>
+          <div class="match-actions">
+            <button id="pause-button" class="secondary-button" type="button" disabled>Pause</button>
+            <button id="restart-button" class="text-button" type="button">Restart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-controls" aria-label="Touch controls">
+        <div class="d-pad">
+          <button class="control-button up" data-control="up" type="button" aria-label="Move up">▲</button>
+          <button class="control-button left" data-control="left" type="button" aria-label="Move left">◀</button>
+          <button class="control-button down" data-control="down" type="button" aria-label="Move down">▼</button>
+          <button class="control-button right" data-control="right" type="button" aria-label="Move right">▶</button>
+        </div>
+        <div class="action-controls">
+          <button id="switch-button" class="action-button" type="button">SWITCH</button>
+          <button id="pass-button" class="action-button" type="button">PASS</button>
+          <button id="tackle-button" class="action-button" type="button">TACKLE</button>
+          <button id="shoot-button" class="shoot-button" type="button">SHOOT</button>
+        </div>
+      </section>
+      <p class="mobile-hint">Touch controls are available on phones and tablets.</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
